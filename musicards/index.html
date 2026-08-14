@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MusiCards 2.0 support, library setup, player guide and privacy information.">
+  <title>MusiCards Support</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <nav class="topbar" aria-label="Support navigation"><a class="site-name" href="../">App Support</a><span>MusiCards</span></nav>
+    <header class="hero">
+      <img class="app-icon" src="../assets/images/musicards.png" alt="MusiCards icon">
+      <h1>MusiCards</h1>
+      <p class="subtitle">MusicBrainz Release Viewer &amp; Player</p>
+    </header>
+
+    <h2>About</h2>
+    <p>MusiCards is a release-centred MusicBrainz explorer with an integrated player for your own music library. It keeps the release, its track structure, credits, works and artist discography at the centre, while adding playback wherever the matching audio files are available to the app.</p>
+    <p>You can use MusiCards purely as a viewer without connecting a music library. When a library is connected, discreet blue play symbols show exactly which releases and tracks are available to play. The complete MusicBrainz release remains visible even when you own only some of its tracks.</p>
+
+    <h2>Latest version</h2>
+    <p><strong>Version 2.0.0 — The Player update</strong></p>
+    <p>MusiCards 2.0 adds a native player without turning the app into a conventional library manager. The new PLAYER card on iOS and PLAYER accordion on macOS stays quietly available while you continue exploring MusicBrainz.</p>
+    <ul>
+      <li>Play individual tracks or all available tracks from a release.</li>
+      <li>Use the compact mini player while browsing, or expand it for artwork, credits and audio details.</li>
+      <li>Connect a persistent, indexed local or File Provider music folder.</li>
+      <li>Create or update the library index directly in MusiCards for macOS.</li>
+      <li>Control playback from the iPhone Lock Screen and the iOS or macOS Control Centre.</li>
+      <li>See the current source, audio route, format, sample rate, bit depth and channel layout.</li>
+    </ul>
+
+        <h2 id="help">Explore</h2>
+    <ul>
+      <li>Type an <strong>artist</strong> name to search for artists.</li>
+      <li>Start with a comma — <strong>, release title</strong> — to search for releases without specifying an artist.</li>
+      <li>Use <strong>artist, release</strong> for a combined search.</li>
+      <li>Paste a MusicBrainz release MBID into the search field to open that exact release.</li>
+      <li>On iPhone, identify music with Shazam or scan the barcode of a CD.</li>
+      <li>Playable releases are prioritised in search results and marked with a blue play symbol.</li>
+      <li>Tap a card or accordion header to move between SEARCH, RELEASE, TRACKS, ARTIST &amp; DISCOGRAPHY and PLAYER.</li>
+    </ul>
+
+    <h2>Prepare and connect your library</h2>
+    <ol>
+      <li>Tag your albums with <a href="https://picard.musicbrainz.org/">MusicBrainz Picard</a>. MusiCards uses the embedded MusicBrainz release and track identifiers to make exact matches.</li>
+      <li>Build a <strong>library.json</strong> index. On Mac, press CONNECT and choose <strong>Create / Update Library Index</strong>. MusiCards scans the tags without copying the audio files.</li>
+      <li>On iPhone, select an already indexed music folder with CONNECT. Index creation is intentionally performed on a Mac or computer, so the iPhone never needs to download an entire cloud library just to catalogue it.</li>
+      <li>Search MusicBrainz and play any release or track marked with a blue play symbol.</li>
+    </ol>
+    <p>The CONNECTED menu lets you choose another library or disconnect the current one. Choosing another library replaces the existing connection; it does not merge two folders.</p>
+    <p>The index stores file paths and MusicBrainz identifiers, not copies of your music. Exact track-level matching also supports partial albums and multi-layer editions: only the files actually present in your library are marked as playable.</p>
+
+    <h2>Player</h2>
+    <p>Tap the blue symbol beside a track to play it, or the symbol on the RELEASE card to queue all playable tracks from that release. Tracks that are not present remain fully visible for browsing but are not added to the queue.</p>
+    <ul>
+      <li>The collapsed PLAYER card or accordion provides previous, play/pause, next and seek controls without interrupting exploration.</li>
+      <li>The expanded player adds cover art, release and track information, MusicBrainz credits, file format and output-route details.</li>
+      <li>Lock Screen, Control Centre, background playback, artwork, seeking and previous/next commands are supported through the native Apple media controls.</li>
+      <li>Compatible USB audio devices can be used through the system-selected output. Bluetooth, AirPlay, built-in speakers and other macOS routes are identified where the operating system exposes them.</li>
+      <li>If an audio route is interrupted or disconnected, MusiCards pauses safely and allows playback to resume after a valid route returns.</li>
+    </ul>
+    <p>MusiCards uses the native audio stack and does not apply EQ, normalisation or sound effects. On macOS it attempts to match the output sample rate to the source where the selected device permits it. The final signal path still depends on the device, connection and operating-system route, so MusiCards does not make a universal “bit-perfect” claim.</p>
+
+    <h2>Supported audio files</h2>
+    <p>The library index recognises FLAC, ALAC and AAC audio stored in <strong>.flac</strong>, <strong>.m4a</strong> or <strong>.aac</strong> files. Audio details are read when playback begins, keeping library indexing fast even for large collections.</p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>Native iOS and macOS experience from a shared multiplatform app.</li>
+      <li>Stacked cards on iOS and a Frosted or Liquid Glass accordion on macOS.</li>
+      <li>Release → Tracks → Artist navigation with artist information and discography.</li>
+      <li>Search by artist, release title, combined artist/release query, barcode or MusicBrainz release MBID.</li>
+      <li>Shazam recognition, CD barcode scanning and Now Playing matching on iPhone.</li>
+      <li>Detailed track credits grouped into creators, performers and technical roles.</li>
+      <li>Structured classical music track titles and work information.</li>
+      <li>Music service and Discogs links when available in MusicBrainz.</li>
+      <li>Persistent library connection and fast, track-accurate local matching.</li>
+      <li>Native queue, background playback, system media controls and route-aware playback.</li>
+    </ul>
+
+    <h2>Troubleshooting</h2>
+    <ul>
+      <li><strong>No blue play symbol:</strong> confirm that the music folder contains <strong>library.json</strong>, rebuild the index after changing files, and check the album in MusicBrainz Picard.</li>
+      <li><strong>An album is missing from the index:</strong> it most likely has no embedded MusicBrainz release MBID. Tag it with Picard and create the index again.</li>
+      <li><strong>A cloud track takes time to start:</strong> the File Provider may need to download that individual file first. MusiCards does not download the whole library.</li>
+      <li><strong>No sound or playback stops:</strong> check the current system output and reconnect any USB, Bluetooth or AirPlay device before resuming.</li>
+      <li><strong>The connected library changed:</strong> open CONNECTED to choose the updated folder again, or rebuild its index on Mac.</li>
+    </ul>
+
+        <h2 id="support">Support</h2>
+    <p>Questions, suggestions and feedback are always welcome.</p>
+    <p class="support-link"><a href="mailto:hild.gyorgy@freemail.hu?subject=MusiCards%20Support">Send a support message</a></p>
+
+    <h2 id="privacy">Privacy Policy</h2>
+    <p>MusiCards has no user accounts, advertising or analytics. The developer does not collect, transmit or share your personal data.</p>
+    <p>Recent searches, selected items, app preferences and the security-scoped reference to your connected music folder are stored locally on your device using system storage.</p>
+    <p>Your audio files remain in the folder you choose. MusiCards reads the library index and accesses a selected audio file for playback; it does not upload your music to the developer. On macOS, index creation reads embedded metadata and writes <strong>library.json</strong> into the selected folder.</p>
+    <p>On iOS, microphone access is used only when you start Shazam recognition. MusiCards does not record or store microphone audio.</p>
+    <p>MusiCards connects to external services to retrieve music data:</p>
+    <ul>
+      <li>MusicBrainz for music metadata.</li>
+      <li>Cover Art Archive for album artwork.</li>
+      <li>Apple's Shazam service for user-initiated music recognition on iOS.</li>
+      <li>Apple system media services for Now Playing matching and native playback controls.</li>
+      <li>Wikidata and Wikipedia for artist information when available.</li>
+    </ul>
+    <p>Search terms, MusicBrainz identifiers and similar request data may be sent to the relevant service when you use these features. Those services process requests according to their own privacy policies.</p>
+
+    <h2>Attribution</h2>
+    <p>Music metadata is provided by <a href="https://musicbrainz.org">MusicBrainz</a> under the CC0 license. Cover art is provided by the Cover Art Archive.</p>
+
+    <div class="footer">György Hild · 2026</div>
+  </main>
+</body>
+</html>
