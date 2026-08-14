@@ -64,16 +64,6 @@ a:hover { text-decoration: underline; }
   object-fit: cover;
 }
 
-.icon-placeholder {
-  display: grid;
-  place-items: center;
-  background: linear-gradient(145deg, #6a8cff, #5a4fcf);
-  color: white;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-}
-
 h1 {
   margin: 0 0 10px;
   font-size: 36px;
