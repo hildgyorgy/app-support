@@ -92,7 +92,8 @@ h3 {
 
 p { margin: 8px 0; }
 
-ul {
+ul,
+ol {
   margin: 8px 0;
   padding-left: 21px;
 }

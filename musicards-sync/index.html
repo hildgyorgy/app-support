@@ -16,9 +16,39 @@
       <p class="subtitle">Support and privacy information</p>
     </header>
 
-    <h2>Support</h2>
+    <h2 id="help">Help</h2>
+    <p>MusiCards Sync keeps a music folder and a playback destination in sync, and publishes the <code>library.json</code> index used by MusiCards.</p>
+
+    <h3>First setup</h3>
+    <ol>
+      <li>Choose the source folder that contains your music library.</li>
+      <li>Choose a local or remote destination. For a remote destination, enter its display name, host, user name, music-folder path and SSH port.</li>
+      <li>Run <strong>Sync Preview</strong> to see which files and folders would change. Preview does not copy files or rebuild the library index.</li>
+      <li>Run <strong>Sync</strong> to transfer the changes, generate the new library index and publish it to the destination.</li>
+    </ol>
+
+    <h3>Remote destinations</h3>
+    <p>During first-time pairing, MusiCards Sync uses your SSH password to install its public key on the destination. The password is not saved. Later connections use the installed key, so switching between saved destinations does not require signing in again.</p>
+
+    <h3>MusicBrainz-ready albums</h3>
+    <p>The synchronization report shows how many album folders contain a MusicBrainz Release MBID. Tag albums with <a href="https://picard.musicbrainz.org/">MusicBrainz Picard</a> so MusiCards can match releases and tracks reliably.</p>
+
+    <h3>Library index</h3>
+    <p>A real sync removes the previous destination index before changing the music library. After the files are synchronized, MusiCards Sync publishes the newly generated index and verifies the result. This prevents an outdated index from describing a partly updated library.</p>
+
+    <h2 id="support">Support</h2>
+    <p>If pairing or synchronization fails, first confirm that the destination is reachable, SSH access is enabled, the destination path exists, and the user has permission to write there. The progress report contains the detailed rsync or SSH error.</p>
     <p>Questions, suggestions and feedback are always welcome.</p>
     <p class="support-link"><a href="mailto:hild.gyorgy@freemail.hu?subject=MusiCards%20Sync%20Support">Send a support message</a></p>
+
+    <h2 id="privacy">Privacy</h2>
+    <p>MusiCards Sync does not require an account and contains no advertising or analytics.</p>
+    <ul>
+      <li>Source and destination settings are stored locally on your Mac.</li>
+      <li>SSH passwords are used only during pairing and are never saved by the app.</li>
+      <li>Music files and the library index are transferred directly between your Mac and the selected destination. They are not sent through a developer-operated server.</li>
+      <li>Removing a saved remote location from the app does not delete music or SSH keys from the destination.</li>
+    </ul>
 
     <div class="footer">György Hild · 2026</div>
   </main>
