@@ -17,36 +17,62 @@
     </header>
 
     <h2 id="help">Help</h2>
-    <p>MusiCards Sync keeps a music folder and a playback destination in sync, and publishes the <code>library.json</code> index used by MusiCards.</p>
+    <p>MusiCards Sync keeps a music folder and one or more playback destinations in sync, and creates the <code>library.json</code> index used by MusiCards.</p>
+
+    <h3>System requirements</h3>
+    <p>MusiCards Sync is designed for Apple Silicon Macs and requires macOS 26 or later.</p>
 
     <h3>First setup</h3>
     <ol>
       <li>Choose the source folder that contains your music library.</li>
       <li>Choose a local or remote destination. For a remote destination, enter its display name, host, user name, music-folder path and SSH port.</li>
       <li>Run <strong>Sync Preview</strong> to see which files and folders would change. Preview does not copy files or rebuild the library index.</li>
-      <li>Run <strong>Sync</strong> to transfer the changes, generate the new library index and publish it to the destination.</li>
+      <li>Choose the sync operation you need and start it.</li>
     </ol>
 
+    <h3>Sync operations</h3>
+    <ul>
+      <li><strong>Sync</strong> rebuilds the library index and synchronizes all configured destinations.</li>
+      <li><strong>Sync Without Rebuild</strong> uses the existing library index and synchronizes the selected destination or destinations.</li>
+      <li><strong>Rebuild Library Index</strong> rebuilds <code>library.json</code> in the source library without transferring files.</li>
+      <li><strong>Sync Files Only</strong> performs file synchronization only and does not create, replace or remove <code>library.json</code>.</li>
+    </ul>
+
     <h3>Remote destinations</h3>
-    <p>During first-time pairing, MusiCards Sync uses your SSH password to install its public key on the destination. The password is not saved. Later connections use the installed key, so switching between saved destinations does not require signing in again.</p>
+    <p>Remote synchronization uses SSH. During first-time pairing, MusiCards Sync uses your SSH password to install its public key on the destination. The password is not saved. Later connections use the installed key, so switching between saved destinations does not require signing in again.</p>
+    <p>The app bundles its own rsync executable for local synchronization work. Remote destinations must provide a compatible rsync installation that is available over SSH.</p>
+
+    <h3>Online-only cloud files</h3>
+    <p>If the source library is stored in a File Provider location such as Dropbox, some files may be online-only. macOS can expose a different local modification date for these dataless placeholders than for the fully downloaded file.</p>
+    <p>When Sync Preview detects modified files that are still online-only, MusiCards Sync shows a warning. Those files may be downloaded and transferred again even when their contents have not changed. The app does not suppress the transfer or assume that equal file sizes mean equal contents.</p>
+    <p>If the source library is fully available offline, this File Provider timestamp issue does not apply.</p>
 
     <h3>MusicBrainz-ready albums</h3>
     <p>The synchronization report shows how many album folders contain a MusicBrainz Release MBID. Tag albums with <a href="https://picard.musicbrainz.org/">MusicBrainz Picard</a> so MusiCards can match releases and tracks reliably.</p>
 
     <h3>Library index</h3>
-    <p>A real sync removes the previous destination index before changing the music library. After the files are synchronized, MusiCards Sync publishes the newly generated index and verifies the result. This prevents an outdated index from describing a partly updated library.</p>
+    <p>A normal <strong>Sync</strong> rebuilds the source <code>library.json</code>, removes the previous destination index before changing the destination music library, then publishes the new index after file synchronization has completed and verifies the result. This prevents an outdated index from describing a partly updated library.</p>
+    <p><strong>Sync Files Only</strong> intentionally leaves <code>library.json</code> untouched.</p>
+
+    <h3>Third-party software</h3>
+    <p>MusiCards Sync includes rsync 3.5.0 and its bundled third-party components. License and attribution texts are available from <strong>Third-Party Licenses…</strong> inside the app and are also included with the distributed application.</p>
 
     <h2 id="support">Support</h2>
     <p>If pairing or synchronization fails, first confirm that the destination is reachable, SSH access is enabled, the destination path exists, and the user has permission to write there. The progress report contains the detailed rsync or SSH error.</p>
+    <p>If Sync Preview reports unexpected modified files in a Dropbox or other File Provider source, check whether those files are online-only. The warning shown by MusiCards Sync indicates that macOS may be reporting placeholder modification dates rather than the dates visible on a fully downloaded copy.</p>
+    <p>Removing a saved remote location from MusiCards Sync only removes its saved configuration from the app. It does not delete music or remove the installed SSH key from the destination.</p>
     <p>Questions, suggestions and feedback are always welcome.</p>
     <p class="support-link"><a href="mailto:hild.gyorgy@freemail.hu?subject=MusiCards%20Sync%20Support">Send a support message</a></p>
 
     <h2 id="privacy">Privacy</h2>
-    <p>MusiCards Sync does not require an account and contains no advertising or analytics.</p>
+    <p>MusiCards Sync does not require an account and contains no advertising, analytics, tracking or crash-reporting service operated by the developer.</p>
     <ul>
       <li>Source and destination settings are stored locally on your Mac.</li>
       <li>SSH passwords are used only during pairing and are never saved by the app.</li>
-      <li>Music files and the library index are transferred directly between your Mac and the selected destination. They are not sent through a developer-operated server.</li>
+      <li>The private SSH key used by MusiCards Sync remains on your Mac. Pairing installs only the corresponding public key on the selected remote destination.</li>
+      <li>Music files and the library index are transferred directly between your Mac and the destination you selected. They are not routed through or stored on a developer-operated server.</li>
+      <li>MusiCards Sync does not collect your music-library contents, filenames, MusicBrainz metadata, destination details or synchronization history for the developer.</li>
+      <li>Previewing online-only files uses filesystem metadata only. MusiCards Sync does not intentionally download or read audio contents merely to determine whether the File Provider warning should be shown.</li>
       <li>Removing a saved remote location from the app does not delete music or SSH keys from the destination.</li>
     </ul>
 
