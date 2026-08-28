@@ -16,19 +16,21 @@
       <p class="subtitle">Support and privacy information</p>
     </header>
 
-    <h2 id="help">Help</h2>
-    <p>MusiCards Sync keeps a music folder and one or more playback destinations in sync, and creates the <code>library.json</code> index used by MusiCards.</p>
+    <h2 id="help">About</h2>
+    <p>MusiCards Sync maintains one trusted music archive and keeps synchronized copies ready for the places where you listen. It treats the music archive you designate as the source of truth, then mirrors it to one or more local or remote destinations — such as a portable SSD, a home server running Navidrome or a car music library. It also creates the <code>library.json</code> index used by MusiCards.</p>
+    <p>Sync is one-way: each destination is updated to match the source. A destination is a storage location, not a speaker or playback device; another app or system can use the synchronized library there.</p>
 
     <h3>System requirements</h3>
     <p>MusiCards Sync is designed for Apple Silicon Macs and requires macOS 26 or later.</p>
 
-    <h3>Download app for Apple Silicon</h3>
-    <p class="support-link"><a href="https://hildgyorgy.github.io/app-support/musicards-sync/MusiCards Sync 1.0.dmg">MusiCards Sync.dmg</a></p>
+    <h3>Download for Apple silicon</h3>
+    <p class="support-link"><a href="MusiCards%20Sync%201.0.dmg">Download MusiCards Sync 1.0</a></p>
 
     <h3>First setup</h3>
     <ol>
-      <li>Choose the source folder that contains your music library.</li>
-      <li>Choose a local or remote destination. For a remote destination, enter its display name, host, user name, music-folder path and SSH port.</li>
+      <li>Choose the source folder that contains your trusted music archive.</li>
+      <li>Add one or more destinations. A local destination can be another folder or an external SSD; a remote destination can be a home server or another SSH-accessible computer.</li>
+      <li>For a remote destination, enter its display name, host, user name, music-folder path and SSH port.</li>
       <li>Run <strong>Sync Preview</strong> to see which files and folders would change. Preview does not copy files or rebuild the library index.</li>
       <li>Choose the sync operation you need and start it.</li>
     </ol>
@@ -41,7 +43,7 @@
       <li><strong>Sync Files Only</strong> performs file synchronization only and does not create, replace or remove <code>library.json</code>.</li>
     </ul>
 
-    <h3>Remote destinations</h3>
+    <h3>Remote sync (SSH)</h3>
     <p>Remote synchronization uses SSH. During first-time pairing, MusiCards Sync uses your SSH password to install its public key on the destination. The password is not saved. Later connections use the installed key, so switching between saved destinations does not require signing in again.</p>
     <p>The app bundles its own rsync executable for local synchronization work. Remote destinations must provide a compatible rsync installation that is available over SSH.</p>
 
@@ -67,7 +69,7 @@
     <p>Questions, suggestions and feedback are always welcome.</p>
     <p class="support-link"><a href="mailto:hild.gyorgy@freemail.hu?subject=MusiCards%20Sync%20Support">Send a support message</a></p>
 
-    <h2 id="privacy">Privacy</h2>
+    <h2 id="privacy">Privacy Policy</h2>
     <p>MusiCards Sync does not require an account and contains no advertising, analytics, tracking or crash-reporting service operated by the developer.</p>
     <ul>
       <li>Source and destination settings are stored locally on your Mac.</li>
