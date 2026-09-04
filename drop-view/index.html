@@ -27,20 +27,66 @@
 
     <h2>How to use</h2>
     <ol>
-      <li>Drop an <strong>.fbx</strong>, <strong>.gltf</strong> or <strong>.glb</strong> file onto the start screen, or choose <strong>Open File</strong>.</li>
-      <li>Drag to orbit around the model and scroll or pinch to zoom.</li>
-      <li>Switch between perspective and axonometric views.</li>
-      <li>Use the style controls to inspect the original, white, hidden-line, wireframe or black-and-white view.</li>
-      <li>Open Controls to adjust the light, shadows and section plane.</li>
+      <li>Drag a <strong>.glb</strong>, <strong>.fbx</strong> or <strong>.gltf</strong> file onto the page, or choose <strong>OPEN FILE</strong> in the top-left corner. Choose <strong>DEMO</strong> on the start screen to try the viewer without your own file.</li>
+      <li>Drag with the left mouse button to orbit around the model. Scroll or pinch to zoom; drag with the right mouse button to pan.</li>
+      <li>Double-click a point on the model to bring it smoothly to the centre of the view. In ORTHO mode, this keeps the current viewing direction and zoom.</li>
+      <li>Use the display styles at the top centre and the camera modes at the top right to explore the model.</li>
+      <li>Open <strong>CONTROLS</strong> at the bottom left for lighting and glass settings, or <strong>SECTION</strong> at the bottom right for section settings.</li>
     </ol>
 
+    <h3>Finding your way around</h3>
+    <p>The Controls, Ortho and Section menus start closed to leave more room for the model. Click their labels to open or close them. Click on the model area or press Escape to close the menus. On small screens, opening one menu closes the others.</p>
+    <p>Red labels and black markers identify selected views. The red circle with an <strong>i</strong> beside OPEN FILE opens this support page in a new tab.</p>
+
+    <h2>Choosing a model format</h2>
+    <p>The export format makes a noticeable difference to the result. For the best visual quality in Drop &amp; View, start with GLB whenever possible.</p>
+
+    <h3>GLB — recommended for visual quality</h3>
+    <p><strong>Advantages:</strong> in our testing, GLB gives the most faithful overall transfer and the most consistent materials and textures. It can package the geometry and textures into one file, making it convenient to send to a client.</p>
+    <p><strong>Trade-off:</strong> the direct Archicad-to-GLB workflow used for this viewer requires a paid export plugin. Alternatively, import an exported model into Blender and export it as GLB, or use an online converter. Conversion quality varies: textures or material settings may still need adjustment, and converting a file cannot automatically restore textures that were missing from the export.</p>
+    <p>Another option is to install the free <a href="https://www.twinmotion.com/plugins/archicad">Datasmith Exporter for Archicad</a>. Export the model from Archicad as a Datasmith file, import it directly into Unreal Engine, then <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Miscellaneous/ExporttoGLTF">export it as GLB</a>. There is no need to open the model in Twinmotion: the workflow is Archicad &rarr; Datasmith &rarr; Unreal Engine &rarr; GLB.</p>
+
+    <h3>FBX — a quick route from Archicad</h3>
+    <p><strong>Advantages:</strong> native FBX export offers a quick way to try a model in the viewer, usually with accurate geometry. Graphisoft introduced <a href="https://help.graphisoft.com/AC/27/INT/_AC27_Help/005_NewFeatures/005_NewFeatures-11.htm">native FBX import and export in Archicad 27</a>, so availability depends on your Archicad version.</p>
+    <p><strong>Limitations:</strong> FBX results can differ between Archicad versions and export workflows. A model may arrive with a different axis orientation, while materials and textures can look darker or otherwise different from the original. Some exported files may not load correctly. FBX is useful for a quick result, but it is less consistent than GLB in our testing.</p>
+    <p>If your FBX looks wrong or does not open, try importing it into Blender, checking its orientation and materials, and exporting a GLB. An online converter is another option, but check the converted model before sharing it.</p>
+
+    <h3>GLTF and textures</h3>
+    <p>GLTF is also supported, but some files refer to separate texture images or binary data. The viewer opens one selected file at a time, so models that depend on local companion files may not load correctly. A self-contained GLB with embedded textures is the simplest choice.</p>
+
+    <h2>Display styles</h2>
+    <ul>
+      <li><strong>ORIGINAL:</strong> displays the imported materials, colours and textures under the viewer's lighting.</li>
+      <li><strong>WHITE:</strong> shows a neutral white model while keeping recognised glass transparent.</li>
+      <li><strong>HIDDEN:</strong> combines white surfaces with visible edge lines.</li>
+      <li><strong>WIRE:</strong> shows the model's wireframe. Shadows and sun controls are disabled in this mode.</li>
+      <li><strong>B&amp;W:</strong> creates a graphic black-and-white view from the sunlight and shadows.</li>
+    </ul>
+
+    <h2>Camera views</h2>
+    <p><strong>PERSP</strong> gives a perspective view. <strong>AXON</strong> gives an axonometric view with parallel projection. Both allow orbiting around the model.</p>
+    <p><strong>ORTHO</strong> opens the TOP, FRONT, LEFT, RIGHT and BACK presets. The four elevation views can be rotated horizontally with the left mouse button: the building stays upright and the projection remains orthogonal. This lets you inspect angled or curved facades without switching to perspective. TOP remains a fixed overhead view.</p>
+    <p>When you rotate away from an exact elevation, its preset highlight clears while ORTHO stays selected. Click an elevation name to return to that exact view. Panning, zooming and double-click centring remain available.</p>
+
+    <h2>Light and glass controls</h2>
+    <p>Open <strong>CONTROLS</strong> to adjust <strong>SUN DIRECTION</strong> and <strong>SUN HEIGHT</strong>, or toggle <strong>SHADOW</strong>. <strong>CAMERA FOV</strong> changes the field of view in PERSP mode; it is disabled in AXON and ORTHO.</p>
+    <p><strong>GLASS TRANSPARENCY</strong> changes the appearance of materials the viewer recognises as glass. Move the slider left for clearer glass or right for more opaque glass. B&amp;W uses its own fixed glass appearance. Recognised glass-only objects let sunlight through in ORIGINAL, WHITE, HIDDEN and B&amp;W modes.</p>
+
     <h2>Sections and inspection</h2>
-    <p>The section tool reveals the inside of a model along the X, Y or Z axis. You can move or flip the section plane, choose a cut colour and turn section filling on or off.</p>
-    <p>The Controls panel also shows basic model statistics, including the loaded model's structure and geometry information.</p>
+    <p>Click the small circle beside <strong>SECTION</strong> to switch cutting on or off. A red circle means the section is active. Click the SECTION label to open the axis menu, choose <strong>X</strong>, <strong>Y</strong> or <strong>Z</strong>, and move the slider to reveal the inside of the model.</p>
+    <p>Closing the axis menu does not switch off the section. While cutting is active, the position slider stays available.</p>
+
+    <h2>If a file does not open</h2>
+    <p>The viewer returns to the start screen and shows a red error message in place of the privacy note. You can choose another file, drop a new model onto the page or try the demo. The usual privacy note returns when you start another loading attempt.</p>
+    <p>Check the file format and whether the model includes its textures. For inconsistent FBX results, try the GLB workflow above. Large or complex models may take longer to open and can be demanding on phones or older computers.</p>
+
+    <h2>Sharing with clients</h2>
+    <p>Send the model file together with the viewer's web address. The recipient opens the website and drops the file onto it. No account or login is needed. There is currently no model-upload service or shareable link that stores your model online.</p>
 
     <h2>Privacy</h2>
     <p>Drop &amp; View processes the selected model in your browser. The app does not require an account and does not upload your model to a developer-operated server.</p>
-    <p>Three.js is loaded from jsDelivr to provide the 3D viewer. The browser may request that library from the network when the app starts.</p>
+    <p>The viewer loads Three.js and, when needed, its Draco decoder from jsDelivr. Choosing DEMO downloads the sample model from the app's website.</p>
+    <p>If you choose to use an external online converter, that is a separate service: its upload process and privacy terms are independent of Drop &amp; View. Blender conversion can be performed locally on your computer.</p>
 
     <h2>Support</h2>
     <p>Questions, suggestions and feedback are always welcome.</p>
