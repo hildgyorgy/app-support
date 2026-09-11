@@ -31,7 +31,8 @@
       <li>Drag with the left mouse button to orbit around the model. Scroll or pinch to zoom; drag with the right mouse button to pan.</li>
       <li>Double-click a point on the model to bring it smoothly to the centre of the view. In ORTHO mode, this keeps the current viewing direction and zoom.</li>
       <li>Use the display styles at the top centre and the camera modes at the top right to explore the model.</li>
-      <li>Open <strong>CONTROLS</strong> at the bottom left for lighting and glass settings, or <strong>SECTION</strong> at the bottom right for section settings.</li>
+      <li>Choose <strong>ORBIT</strong> for the standard model view, or <strong>FLY</strong> on a desktop computer for free flight through the model. FLY is disabled on touch-only devices.</li>
+      <li>Open <strong>CONTROLS</strong> at the bottom left for lighting, transparency, camera FOV and FLY speed, or <strong>SECTION</strong> at the bottom right for section settings.</li>
     </ol>
 
     <h3>Finding your way around</h3>
@@ -43,8 +44,11 @@
 
     <h3>GLB — recommended for visual quality</h3>
     <p><strong>Advantages:</strong> in our testing, GLB gives the most faithful overall transfer and the most consistent materials and textures. It can package the geometry and textures into one file, making it convenient to send to a client.</p>
-    <p><strong>Trade-off:</strong> the direct Archicad-to-GLB workflow used for this viewer requires a paid export plugin. Alternatively, import an exported model into Blender and export it as GLB, or use an online converter. Conversion quality varies: textures or material settings may still need adjustment, and converting a file cannot automatically restore textures that were missing from the export.</p>
-    <p>Another option is to install the free <a href="https://www.twinmotion.com/plugins/archicad">Datasmith Exporter for Archicad</a>. Export the model from Archicad as a Datasmith file, import it directly into Unreal Engine, then <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Miscellaneous/ExporttoGLTF">export it as GLB</a>. There is no need to open the model in Twinmotion: the workflow is Archicad &rarr; Datasmith &rarr; Unreal Engine &rarr; GLB.</p>
+    <p><strong>Trade-off:</strong> conversion quality still depends on the source model and exporter. Textures or material settings may need adjustment, and converting a file cannot restore textures that were missing from the export.</p>
+
+    <h3>Drop &amp; View GLB Exporter for Archicad</h3>
+    <p>For a direct Archicad workflow, the <a href="https://github.com/hildgyorgy/archicad-glb-exporter/releases">Drop &amp; View GLB Exporter</a> creates a self-contained GLB from the active 3D window. It exports visible geometry, surface colours, transparency, embedded image textures, smooth shading and graphical overrides, and can preserve surface-based mesh groups for visibility controls. The current beta supports Archicad 28 and 29 on Apple Silicon macOS 26 or later and Windows 11.</p>
+    <p>Install the package from <a href="https://github.com/hildgyorgy/archicad-glb-exporter/releases">GitHub Releases</a>, add it through Archicad's Add-On Manager, then choose <strong>Drop &amp; View GLB Exporter &rarr; Export active 3D window to GLB&hellip;</strong> from an active 3D window.</p>
 
     <h3>FBX — a quick route from Archicad</h3>
     <p><strong>Advantages:</strong> native FBX export offers a quick way to try a model in the viewer, usually with accurate geometry. Graphisoft introduced <a href="https://help.graphisoft.com/AC/27/INT/_AC27_Help/005_NewFeatures/005_NewFeatures-11.htm">native FBX import and export in Archicad 27</a>, so availability depends on your Archicad version.</p>
@@ -68,13 +72,17 @@
     <p><strong>ORTHO</strong> opens the TOP, FRONT, LEFT, RIGHT and BACK presets. The four elevation views can be rotated horizontally with the left mouse button: the building stays upright and the projection remains orthogonal. This lets you inspect angled or curved facades without switching to perspective. TOP remains a fixed overhead view.</p>
     <p>When you rotate away from an exact elevation, its preset highlight clears while ORTHO stays selected. Click an elevation name to return to that exact view. Panning, zooming and double-click centring remain available.</p>
 
-    <h2>Light and glass controls</h2>
-    <p>Open <strong>CONTROLS</strong> to adjust <strong>SUN DIRECTION</strong> and <strong>SUN HEIGHT</strong>, or toggle <strong>SHADOW</strong>. <strong>CAMERA FOV</strong> changes the field of view in PERSP mode; it is disabled in AXON and ORTHO.</p>
-    <p><strong>GLASS TRANSPARENCY</strong> changes the appearance of materials the viewer recognises as glass. Move the slider left for clearer glass or right for more opaque glass. B&amp;W uses its own fixed glass appearance. Recognised glass-only objects let sunlight through in ORIGINAL, WHITE, HIDDEN and B&amp;W modes.</p>
+    <h2>Light and viewing controls</h2>
+    <p>Open <strong>CONTROLS</strong> to adjust <strong>SUN DIRECTION</strong> and <strong>SUN HEIGHT</strong>, toggle <strong>SHADOW</strong>, <strong>ENV LIGHT</strong> and <strong>AMBIENT</strong>, or change <strong>CAMERA FOV</strong>. Environment light and ambient occlusion are available in ORIGINAL mode; FOV is available in PERSP mode and disabled in AXON and ORTHO. The panel also includes the FLY speed control; holding SHIFT while flying temporarily doubles the speed.</p>
+    <p><strong>TRANSPARENCY</strong> changes the alpha of transparent materials. Move the slider left for clearer materials or right for more opaque materials. It is available in ORIGINAL, WHITE and HIDDEN modes and disabled in WIRE and B&amp;W, where the viewer uses fixed display treatment. The slider affects transparent materials identified by the imported file; it is not limited to materials named “glass”.</p>
 
     <h2>Sections and inspection</h2>
     <p>Click the small circle beside <strong>SECTION</strong> to switch cutting on or off. A red circle means the section is active. Click the SECTION label to open the axis menu, choose <strong>X</strong>, <strong>Y</strong> or <strong>Z</strong>, and move the slider to reveal the inside of the model.</p>
     <p>Closing the axis menu does not switch off the section. While cutting is active, the position slider stays available.</p>
+
+    <h2>FLY navigation</h2>
+    <p>On a desktop computer, click <strong>FLY</strong> to enter free flight. Move the mouse to look around and use <strong>WASD</strong> or the arrow keys to move; <strong>E</strong> and <strong>Q</strong> move vertically. Hold <strong>SHIFT</strong> for a temporary 2&times; speed boost.</p>
+    <p>A single click on the model pauses FLY and releases the pointer without switching back to ORBIT. Click the model again to resume. While paused, you can use the viewer controls and choose <strong>ORBIT</strong>. Press <strong>ESC</strong> at any time as a fallback to release the pointer.</p>
 
     <h2>If a file does not open</h2>
     <p>The viewer returns to the start screen and shows a red error message in place of the privacy note. You can choose another file, drop a new model onto the page or try the demo. The usual privacy note returns when you start another loading attempt.</p>
