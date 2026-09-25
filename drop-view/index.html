@@ -16,88 +16,67 @@
     <header class="hero">
       <img class="app-icon" src="../assets/images/drop-view.png" alt="Drop &amp; View icon">
       <h1>Drop &amp; View</h1>
-      <p class="subtitle">A browser-based 3D model viewer</p>
+      <p class="subtitle">Share 3D designs with clients, right in the browser</p>
     </header>
 
     <h2>About</h2>
-    <p>Drop &amp; View is a small, browser-based viewer for inspecting 3D models without installing a desktop application. Drop a model onto the start screen, or choose it with the file picker, and explore it interactively.</p>
+    <p>Made with architects in mind: export a design from Archicad, send the GLB file to your client, and let them explore it in their browser. Other 3D models are welcome too. Clients need no app or account.</p>
 
     <h3>System requirements</h3>
-    <p>Drop &amp; View runs in a modern browser with JavaScript and WebGL support. No account or server-side upload is required.</p>
+    <p>Use a modern browser with WebGL. Large models work best on a capable computer.</p>
 
     <h3>Web app</h3>
     <p class="support-link"><a href="https://hildgyorgy.github.io/drop-3d-view/">Open Drop &amp; View</a></p>
 
     <h2>How to use</h2>
     <ol>
-      <li>Drag a <strong>.glb</strong>, <strong>.fbx</strong> or <strong>.gltf</strong> file onto the page, or choose <strong>OPEN FILE</strong> in the top-left corner. Choose <strong>DEMO</strong> on the start screen to try the viewer without your own file.</li>
-      <li>Drag with the left mouse button to orbit around the model. Scroll or pinch to zoom; drag with the right mouse button to pan.</li>
-      <li>Double-click a point on the model to bring it smoothly to the centre of the view. In ORTHO mode, this keeps the current viewing direction and zoom.</li>
-      <li>Use the display styles at the top centre and the camera modes at the top right to explore the model.</li>
-      <li>Choose <strong>ORBIT</strong> for the standard model view, or <strong>FLY</strong> on a desktop computer for free flight through the model. FLY is disabled on touch-only devices.</li>
-      <li>Open <strong>CONTROLS</strong> at the bottom left for lighting, transparency, camera FOV and FLY speed, or <strong>SECTION</strong> at the bottom right for section settings.</li>
+      <li>Drop a <strong>GLB</strong> onto the page, or click <strong>OPEN FILE</strong>. No model? Try <strong>DEMO</strong>.</li>
+      <li>Drag to orbit. Right-drag to pan. Scroll or pinch to zoom.</li>
+      <li>Double-click a detail to centre it. Click <strong>ZOOM ALL</strong> to find the whole model again.</li>
+      <li>Choose a display style at the top centre and a camera view at the top right.</li>
+      <li>Send your client the GLB file and the viewer link. They can open it the same way.</li>
     </ol>
 
-    <h3>Finding your way around</h3>
-    <p>The Controls, Ortho and Section menus start closed to leave more room for the model. Click their labels to open or close them. Click on the model area or press Escape to close the menus. On small screens, opening one menu closes the others.</p>
-    <p>Red labels and black markers identify selected views. The red circle with an <strong>i</strong> beside OPEN FILE opens this support page in a new tab.</p>
+    <h2>Export from Archicad</h2>
+    <ol>
+      <li>Get the <a href="https://github.com/hildgyorgy/archicad-glb-exporter/releases">Drop &amp; View GLB Exporter</a> and add it in Archicad's Add-On Manager.</li>
+      <li>Set up the 3D window as you want it shared. Visible elements, materials, the view and sun position go into the GLB.</li>
+      <li>Choose <strong>Drop &amp; View GLB Exporter &rarr; Export active 3D window to GLB&hellip;</strong></li>
+      <li>Choose how to group the model: by surface, layer or element type. Check the clear-glass selection and add design credits if you like.</li>
+      <li>Save the GLB and drop it into Drop &amp; View.</li>
+    </ol>
+    <p>The exporter supports Archicad 28 and 29 on supported Apple Silicon Macs and Windows 11 PCs. Check the release page for system details.</p>
 
-    <h2>Choosing a model format</h2>
-    <p>The export format makes a noticeable difference to the result. For the best visual quality in Drop &amp; View, start with GLB whenever possible.</p>
-
-    <h3>GLB — recommended for visual quality</h3>
-    <p><strong>Advantages:</strong> in our testing, GLB gives the most faithful overall transfer and the most consistent materials and textures. It can package the geometry and textures into one file, making it convenient to send to a client.</p>
-    <p><strong>Trade-off:</strong> conversion quality still depends on the source model and exporter. Textures or material settings may need adjustment, and converting a file cannot restore textures that were missing from the export.</p>
-
-    <h3>Drop &amp; View GLB Exporter for Archicad</h3>
-    <p>For a direct Archicad workflow, the <a href="https://github.com/hildgyorgy/archicad-glb-exporter/releases">Drop &amp; View GLB Exporter</a> creates a self-contained GLB from the active 3D window. It exports visible geometry, surface colours, transparency, embedded image textures, smooth shading and graphical overrides, and can preserve surface-based mesh groups for visibility controls. The current beta supports Archicad 28 and 29 on Apple Silicon macOS 26 or later and Windows 11.</p>
-    <p>Install the package from <a href="https://github.com/hildgyorgy/archicad-glb-exporter/releases">GitHub Releases</a>, add it through Archicad's Add-On Manager, then choose <strong>Drop &amp; View GLB Exporter &rarr; Export active 3D window to GLB&hellip;</strong> from an active 3D window.</p>
-
-    <h3>FBX — a quick route from Archicad</h3>
-    <p><strong>Advantages:</strong> native FBX export offers a quick way to try a model in the viewer, usually with accurate geometry. Graphisoft introduced <a href="https://help.graphisoft.com/AC/27/INT/_AC27_Help/005_NewFeatures/005_NewFeatures-11.htm">native FBX import and export in Archicad 27</a>, so availability depends on your Archicad version.</p>
-    <p><strong>Limitations:</strong> FBX results can differ between Archicad versions and export workflows. A model may arrive with a different axis orientation, while materials and textures can look darker or otherwise different from the original. Some exported files may not load correctly. FBX is useful for a quick result, but it is less consistent than GLB in our testing.</p>
-    <p>If your FBX looks wrong or does not open, try importing it into Blender, checking its orientation and materials, and exporting a GLB. An online converter is another option, but check the converted model before sharing it.</p>
-
-    <h3>GLTF and textures</h3>
-    <p>GLTF is also supported, but some files refer to separate texture images or binary data. The viewer opens one selected file at a time, so models that depend on local companion files may not load correctly. A self-contained GLB with embedded textures is the simplest choice.</p>
+    <h2>Other model files</h2>
+    <p><strong>GLB</strong> is best for sharing: model and textures travel in one file. <strong>FBX</strong> can work, but colours or orientation may differ. <strong>GLTF</strong> files with separate textures may not open correctly. If an FBX gives trouble, try converting it to GLB in Blender.</p>
 
     <h2>Display styles</h2>
     <ul>
-      <li><strong>ORIGINAL:</strong> displays the imported materials, colours and textures under the viewer's lighting.</li>
-      <li><strong>WHITE:</strong> shows a neutral white model while keeping recognised glass transparent.</li>
-      <li><strong>HIDDEN:</strong> combines white surfaces with visible edge lines.</li>
-      <li><strong>WIRE:</strong> shows the model's wireframe. Shadows and sun controls are disabled in this mode.</li>
-      <li><strong>B&amp;W:</strong> creates a graphic black-and-white view from the sunlight and shadows.</li>
+      <li><strong>ORIGINAL:</strong> the model's colours and textures.</li>
+      <li><strong>WHITE / HIDDEN:</strong> a clean white model, with or without visible edges.</li>
+      <li><strong>WIRE:</strong> just the wireframe.</li>
+      <li><strong>B&amp;W:</strong> a graphic light-and-shadow view.</li>
+      <li><strong>PATH TRACER:</strong> realistic HDRI lighting and glass under ORIGINAL. Let the image refine; more <strong>SAMPLES</strong> means a cleaner result. Exported Archicad sun settings align its lighting. It may be slow, and needs WebGL 2.</li>
     </ul>
 
-    <h2>Camera views</h2>
-    <p><strong>PERSP</strong> gives a perspective view. <strong>AXON</strong> gives an axonometric view with parallel projection. Both allow orbiting around the model.</p>
-    <p><strong>ORTHO</strong> opens the TOP, FRONT, LEFT, RIGHT and BACK presets. The four elevation views can be rotated horizontally with the left mouse button: the building stays upright and the projection remains orthogonal. This lets you inspect angled or curved facades without switching to perspective. TOP remains a fixed overhead view.</p>
-    <p>When you rotate away from an exact elevation, its preset highlight clears while ORTHO stays selected. Click an elevation name to return to that exact view. Panning, zooming and double-click centring remain available.</p>
-
-    <h2>Light and viewing controls</h2>
-    <p>Open <strong>CONTROLS</strong> to adjust <strong>SUN DIRECTION</strong> and <strong>SUN HEIGHT</strong>, toggle <strong>SHADOW</strong>, <strong>ENV LIGHT</strong> and <strong>AMBIENT</strong>, or change <strong>CAMERA FOV</strong>. Environment light and ambient occlusion are available in ORIGINAL mode; FOV is available in PERSP mode and disabled in AXON and ORTHO. The panel also includes the FLY speed control; holding SHIFT while flying temporarily doubles the speed.</p>
-    <p><strong>TRANSPARENCY</strong> changes the alpha of transparent materials. Move the slider left for clearer materials or right for more opaque materials. It is available in ORIGINAL, WHITE and HIDDEN modes and disabled in WIRE and B&amp;W, where the viewer uses fixed display treatment. The slider affects transparent materials identified by the imported file; it is not limited to materials named “glass”.</p>
-
-    <h2>Sections and inspection</h2>
-    <p>Click the small circle beside <strong>SECTION</strong> to switch cutting on or off. A red circle means the section is active. Click the SECTION label to open the axis menu, choose <strong>X</strong>, <strong>Y</strong> or <strong>Z</strong>, and move the slider to reveal the inside of the model.</p>
-    <p>Closing the axis menu does not switch off the section. While cutting is active, the position slider stays available.</p>
-
-    <h2>FLY navigation</h2>
-    <p>On a desktop computer, click <strong>FLY</strong> to enter free flight. Move the mouse to look around and use <strong>WASD</strong> or the arrow keys to move; <strong>E</strong> and <strong>Q</strong> move vertically. Hold <strong>SHIFT</strong> for a temporary 2&times; speed boost.</p>
-    <p>A single click on the model pauses FLY and releases the pointer without switching back to ORBIT. Click the model again to resume. While paused, you can use the viewer controls and choose <strong>ORBIT</strong>. Press <strong>ESC</strong> at any time as a fallback to release the pointer.</p>
+    <h2>More ways to explore</h2>
+    <ul>
+      <li><strong>PERSP / AXON / ORTHO:</strong> perspective, axonometric or top and elevation views.</li>
+      <li><strong>CONTROLS:</strong> adjust the sun, shadows, transparency, camera and FLY speed.</li>
+      <li><strong>GROUPS:</strong> show or hide surfaces, layers or element types, depending on the export. Use <strong>ALL ON / ALL OFF</strong> for a quick reset.</li>
+      <li><strong>SECTION:</strong> switch on the cut, choose X, Y or Z, then move the slider.</li>
+      <li><strong>FLY:</strong> on a desktop, use WASD or arrow keys to move; E/Q change height. Click the model to pause or resume; press Escape to release the pointer.</li>
+    </ul>
+    <p>Click the red <strong>i</strong> beside OPEN FILE for app details, design credits and Support.</p>
 
     <h2>If a file does not open</h2>
-    <p>The viewer returns to the start screen and shows a red error message in place of the privacy note. You can choose another file, drop a new model onto the page or try the demo. The usual privacy note returns when you start another loading attempt.</p>
-    <p>Check the file format and whether the model includes its textures. For inconsistent FBX results, try the GLB workflow above. Large or complex models may take longer to open and can be demanding on phones or older computers.</p>
+    <p>Check the format and try a self-contained GLB. If you see an error, choose another file or try DEMO. Large models may take longer, especially on phones.</p>
 
     <h2>Sharing with clients</h2>
-    <p>Send the model file together with the viewer's web address. The recipient opens the website and drops the file onto it. No account or login is needed. There is currently no model-upload service or shareable link that stores your model online.</p>
+    <p>Send the GLB and the <a href="https://hildgyorgy.github.io/drop-3d-view/">viewer link</a>. Your client drops the file onto the page. No login or upload to Drop &amp; View is needed.</p>
 
     <h2>Privacy</h2>
-    <p>Drop &amp; View processes the selected model in your browser. The app does not require an account and does not upload your model to a developer-operated server.</p>
-    <p>The viewer loads Three.js and, when needed, its Draco decoder from jsDelivr. Choosing DEMO downloads the sample model from the app's website.</p>
-    <p>If you choose to use an external online converter, that is a separate service: its upload process and privacy terms are independent of Drop &amp; View. Blender conversion can be performed locally on your computer.</p>
+    <p>Your model stays in your browser; Drop &amp; View does not upload it to its own server. The app loads rendering code online, and DEMO downloads a sample model. External converters have their own privacy terms.</p>
 
     <h2>Support</h2>
     <p>Questions, suggestions and feedback are always welcome.</p>
