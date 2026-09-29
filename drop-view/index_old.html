@@ -3,35 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Drop & View support, usage guide and privacy information.">
+  <meta name="description" content="Drop &amp; View support, usage guide and privacy information.">
   <link rel="icon" type="image/png" sizes="1024x1024" href="../assets/images/icon.png">
   <link rel="apple-touch-icon" sizes="1024x1024" href="../assets/images/icon.png">
   <link rel="manifest" href="../site.webmanifest">
-  <title>Drop & View Support</title>
+  <title>Drop &amp; View Support</title>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
   <main class="container">
-    <nav class="topbar" aria-label="Support navigation"><a class="site-name" href="../">App Support</a><span>Drop & View</span></nav>
-
+    <nav class="topbar" aria-label="Support navigation"><a class="site-name" href="../">App Support</a><span>Drop &amp; View</span></nav>
     <header class="hero">
-      <img class="app-icon" src="../assets/images/drop-view.png" alt="Drop & View icon">
-      <h1>Drop & View</h1>
-      <p class="subtitle">Share Archicad models in the browser</p>
+      <img class="app-icon" src="../assets/images/drop-view.png" alt="Drop &amp; View icon">
+      <h1>Drop &amp; View</h1>
+      <p class="subtitle">Share 3D designs with clients, right in the browser</p>
     </header>
 
     <h2>About</h2>
-    <p>Drop & View is a lightweight way to share architectural 3D models without a dedicated viewer. Export a GLB, send the file and the viewer link, and open the model directly in a modern browser. No app, account or upload to Drop & View is required.</p>
+    <p>Made with architects in mind: export a design from Archicad, send the GLB file to your client, and let them explore it in their browser. Other 3D models are welcome too. Clients need no app or account.</p>
 
-    <h2>Archicad workflow</h2>
-    <p>Using Archicad 28 or 29? The free <a href="https://github.com/hildgyorgy/archicad-glb-exporter/releases">Drop &amp; View GLB Exporter</a> creates GLB files directly from the active 3D window on supported Apple Silicon Macs and Windows 11 PCs.</p>
-    <p>The exporter and viewer are designed to work together, preserving the visible model, materials, transparency, clear glass, view and sun settings in a predictable browser-friendly workflow.</p>
+    <h3>System requirements</h3>
+    <p>Use a modern browser with WebGL. Large models work best on a capable computer.</p>
 
     <h3>Web app</h3>
     <p class="support-link"><a href="https://hildgyorgy.github.io/drop-3d-view/">Open Drop &amp; View</a></p>
-
-    <h3>System requirements</h3>
-    <p>Use a current desktop or mobile browser. Large models work best on a capable computer.</p>
 
     <h2>How to use</h2>
     <ol>
@@ -39,7 +34,7 @@
       <li>Drag to orbit. Right-drag to pan. Scroll or pinch to zoom.</li>
       <li>Double-click a detail to centre it. Click <strong>ZOOM ALL</strong> to find the whole model again.</li>
       <li>Choose a display style at the top centre and a camera view at the top right.</li>
-      <li>Send the GLB file and the viewer link to a client, consultant, project manager or contractor. They can open it the same way.</li>
+      <li>Send your client the GLB file and the viewer link. They can open it the same way.</li>
     </ol>
 
     <h2>Export from Archicad</h2>
@@ -52,8 +47,8 @@
     </ol>
     <p>The exporter supports Archicad 28 and 29 on supported Apple Silicon Macs and Windows 11 PCs. Check the release page for system details.</p>
 
-    <h2>Why GLB?</h2>
-    <p>Drop & View intentionally uses <strong>GLB files only</strong>. A GLB keeps geometry, materials and textures together in one portable file, making the workflow more predictable and easier to share. Convert other model formats to GLB before opening them here.</p>
+    <h2>Model format</h2>
+    <p>Drop &amp; View opens <strong>GLB files only</strong>. A GLB keeps the model and its textures together, so it is easy to share. Convert other model formats to GLB before opening them here.</p>
 
     <h2>Display styles</h2>
     <ul>
@@ -61,12 +56,12 @@
       <li><strong>WHITE / HIDDEN:</strong> a clean white model, with or without visible edges.</li>
       <li><strong>WIRE:</strong> just the wireframe.</li>
       <li><strong>B&amp;W:</strong> a graphic light-and-shadow view.</li>
-      <li><strong>PATH TRACER:</strong> realistic HDRI lighting and glass under ORIGINAL. Let the image refine; more <strong>SAMPLES</strong> means a cleaner result. Exported Archicad sun settings align its lighting. It may be slow on less capable hardware.</li>
+      <li><strong>PATH TRACER:</strong> realistic HDRI lighting and glass under ORIGINAL. Let the image refine; more <strong>SAMPLES</strong> means a cleaner result. Exported Archicad sun settings align its lighting. It may be slow, and needs WebGL 2.</li>
     </ul>
 
     <h2>More ways to explore</h2>
     <ul>
-      <li><strong>PERSP / AXON / ORTHO:</strong> perspective, axonometric, top and elevation views.</li>
+      <li><strong>PERSP / AXON / ORTHO:</strong> perspective, axonometric or top and elevation views.</li>
       <li><strong>CONTROLS:</strong> adjust the sun, shadows, transparency, camera and FLY speed.</li>
       <li><strong>GROUPS:</strong> show or hide surfaces, layers or element types, depending on the export. Use <strong>ALL ON / ALL OFF</strong> for a quick reset.</li>
       <li><strong>SECTION:</strong> switch on the cut, choose X, Y or Z, then move the slider.</li>
@@ -77,11 +72,11 @@
     <h2>If a file does not open</h2>
     <p>Check the format and try a self-contained GLB. If you see an error, choose another file or try DEMO. Large models may take longer, especially on phones.</p>
 
-    <h2>Sharing</h2>
-    <p>Send the GLB and the <a href="https://hildgyorgy.github.io/drop-3d-view/">viewer link</a>. The recipient drops the file onto the page and explores it locally in the browser.</p>
+    <h2>Sharing with clients</h2>
+    <p>Send the GLB and the <a href="https://hildgyorgy.github.io/drop-3d-view/">viewer link</a>. Your client drops the file onto the page. No login or upload to Drop &amp; View is needed.</p>
 
     <h2>Privacy</h2>
-    <p>Your model stays in your browser; Drop & View does not upload it to its own server. The app loads rendering code online, and DEMO downloads a sample model. External converters have their own privacy terms.</p>
+    <p>Your model stays in your browser; Drop &amp; View does not upload it to its own server. The app loads rendering code online, and DEMO downloads a sample model. External converters have their own privacy terms.</p>
 
     <h2>Support</h2>
     <p>Questions, suggestions and feedback are always welcome.</p>
