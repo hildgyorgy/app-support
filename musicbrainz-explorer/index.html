@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MusicBrainz Explorer support, local playback guide and privacy information.">
+  <meta name="description" content="MusicBrainz Explorer setup, playback, support and privacy information.">
   <link rel="icon" type="image/png" sizes="1024x1024" href="../assets/images/icon.png">
   <link rel="apple-touch-icon" sizes="1024x1024" href="../assets/images/icon.png">
   <link rel="manifest" href="../site.webmanifest">
@@ -21,25 +21,26 @@
 
     <h2>About</h2>
     <p>MusicBrainz Explorer is a release and discography browser built around MusicBrainz metadata, detailed credits and clear navigation.</p>
-    <p>It can also map MusicBrainz-tagged files in your own music folder to the same releases and play them locally. Playback is optional; the Explorer remains fully usable without connecting a library.</p>
+    <p>It can match and play MusicBrainz-tagged music from a local folder or Navidrome. Playback is optional; the Explorer remains fully usable without a library.</p>
 
     <h3>System requirements</h3>
-    <p>MusicBrainz Explorer runs in a modern browser with JavaScript enabled. Local playback requires access to a MusicBrainz-tagged music library.</p>
+    <p>MusicBrainz Explorer runs in a modern browser with JavaScript enabled. Local-folder playback requires supported tagged files; Navidrome playback requires an accessible OpenSubsonic server.</p>
 
     <h3>Web app</h3>
     <p class="support-link"><a href="https://hildgyorgy.github.io/mb-explorer/">Open MusicBrainz Explorer</a></p>
 
-    <h2>Playing your own library</h2>
-    <p>Local playback relies on the MusicBrainz release and recording IDs stored in your audio files. Folder names are not used to identify albums.</p>
+    <h2>Setup and playback</h2>
+    <p>Select the pulsing logo on the start page to open search help and playback setup.</p>
     <ul>
-      <li>Create or load a library index for your music folder.</li>
-      <li>A play symbol marks matching releases in search results.</li>
-      <li>Open a matching release and select the play icon beside a track.</li>
-      <li>The floating player remains available while you browse another release.</li>
+      <li><strong>Source:</strong> choose a local music folder or connect Navidrome.</li>
+      <li>For local playback, create or load <code>library.json</code>. Albums are identified from embedded MusicBrainz IDs, never folder names.</li>
+      <li><strong>MusicBrainz compatibility:</strong> review which albums are correctly identified and which need better tags.</li>
+      <li><strong>Output:</strong> use system audio or a discovered UPnP renderer when the local bridge is running.</li>
+      <li>Play symbols mark matched releases and tracks; the floating player stays available while you browse.</li>
     </ul>
 
     <h2>Audio playback</h2>
-    <p>The Explorer plays the original selected file through the browser's native audio pipeline and does not deliberately transcode it.</p>
+    <p>With system audio, the Explorer plays the original selected file through the browser's native audio pipeline and does not deliberately transcode it.</p>
     <p>Because the browser, operating-system mixer and chosen audio device remain part of the playback chain, bit-perfect output cannot be guaranteed.</p>
 
     <h2>Support</h2>
@@ -52,13 +53,14 @@
       <li>Your music files and <code>library.json</code> are not uploaded by the app.</li>
       <li>Browser indexing and playback happen locally on your device.</li>
       <li>The app does not retain folder access after the page session ends.</li>
+      <li>A Navidrome password is kept only for the current page session; the saved connection profile does not include it.</li>
       <li>Music metadata and cover art are requested from MusicBrainz and the Cover Art Archive.</li>
     </ul>
 
     <h2>Attribution</h2>
     <p>Music metadata is provided by <a href="https://musicbrainz.org">MusicBrainz</a> under the CC0 license. Cover art is provided by the Cover Art Archive.</p>
 
-    <div class="footer">György Hild · 2026</div>
+    <div class="footer">MusicBrainz Explorer v1.5.0 · György Hild · 2026</div>
   </main>
 </body>
 </html>
