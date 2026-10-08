@@ -35,12 +35,22 @@
       <li><strong>Source:</strong> choose a local music folder or connect Navidrome.</li>
       <li>For local playback, create or load <code>library.json</code>. Albums are identified from embedded MusicBrainz IDs, never folder names.</li>
       <li><strong>MusicBrainz compatibility:</strong> review which albums are correctly identified and which need better tags.</li>
-      <li><strong>Output:</strong> use system audio or a discovered UPnP renderer when the local bridge is running.</li>
+      <li><strong>Output:</strong> system audio is supported; UPnP network-renderer output is under development and coming soon.</li>
       <li>Play symbols mark matched releases and tracks; the floating player stays available while you browse.</li>
     </ul>
 
+    <h2>Navidrome</h2>
+    <p>Open <strong>Setup → Source → Navidrome → Connect or configure</strong>, then enter the server URL, username and password. Remote servers must use HTTPS.</p>
+    <ul>
+      <li>No <code>library.json</code> is needed: the Explorer reads the Navidrome catalogue through OpenSubsonic.</li>
+      <li>Albums need release MBIDs; tracks need recording MBIDs plus accurate disc and track numbers.</li>
+      <li>The compatibility report lists identified albums and albums that still need MusicBrainz tags.</li>
+      <li>Matching server releases appear in search and stream through the browser player using system audio.</li>
+      <li>The saved profile includes the server and username, but never the password; reconnect after a new page session.</li>
+    </ul>
+
     <h2>Audio playback</h2>
-    <p>With system audio, the Explorer plays the original selected file through the browser's native audio pipeline and does not deliberately transcode it.</p>
+    <p>With system audio, local files use the browser's native audio pipeline; Navidrome playback requests the raw stream without a bitrate limit. The Explorer does not deliberately request transcoding.</p>
     <p>Because the browser, operating-system mixer and chosen audio device remain part of the playback chain, bit-perfect output cannot be guaranteed.</p>
 
     <h2>Support</h2>
@@ -53,6 +63,7 @@
       <li>Your music files and <code>library.json</code> are not uploaded by the app.</li>
       <li>Browser indexing and playback happen locally on your device.</li>
       <li>The app does not retain folder access after the page session ends.</li>
+      <li>Navidrome requests go directly from your browser to the server you configure.</li>
       <li>A Navidrome password is kept only for the current page session; the saved connection profile does not include it.</li>
       <li>Music metadata and cover art are requested from MusicBrainz and the Cover Art Archive.</li>
     </ul>
