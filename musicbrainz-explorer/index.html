@@ -46,7 +46,7 @@
       <li>Albums need release MBIDs; tracks need recording MBIDs plus accurate disc and track numbers.</li>
       <li>The compatibility report lists identified albums and albums that still need MusicBrainz tags.</li>
       <li>Matching server releases appear in search and stream through the browser player using system audio.</li>
-      <li>The saved profile includes the server and username, but never the password; reconnect after a new page session.</li>
+      <li>The selected source and server connection are restored across sessions using a saved salted login token; the original password is not stored.</li>
     </ul>
 
     <h2>Audio playback</h2>
@@ -62,9 +62,9 @@
       <li>MusicBrainz Explorer has no application backend or user accounts.</li>
       <li>Your music files and <code>library.json</code> are not uploaded by the app.</li>
       <li>Browser indexing and playback happen locally on your device.</li>
-      <li>The app does not retain folder access after the page session ends.</li>
+      <li>Supported browsers remember the selected local-folder handle, but may ask you to approve access again.</li>
       <li>Navidrome requests go directly from your browser to the server you configure.</li>
-      <li>A Navidrome password is kept only for the current page session; the saved connection profile does not include it.</li>
+      <li>The saved Navidrome connection contains a reusable salted login token, not the original password.</li>
       <li>Music metadata and cover art are requested from MusicBrainz and the Cover Art Archive.</li>
     </ul>
 
