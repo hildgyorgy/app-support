@@ -80,6 +80,16 @@
     <h2>Sharing</h2>
     <p>Send the GLB and the <a href="https://hildgyorgy.github.io/drop-3d-view/">viewer link</a>. The recipient drops the file onto the page and explores it locally in the browser.</p>
 
+    <h2>Embed on your website</h2>
+    <p>Put a public GLB on your own website. Paste this where you want the interactive viewer to appear, and change the model path:</p>
+    <pre><code>&lt;script
+  src="https://hildgyorgy.github.io/drop-3d-view/embed/drop-view-embed.js?v=inline-2"
+  data-model="/models/your-project.glb"
+  data-title="Explore the 3D model"
+  data-inline="true"
+&gt;&lt;/script&gt;</code></pre>
+    <p>Visitors can orbit and zoom on the page, then open the same view full screen for all controls. The GLB must be on the same website as this snippet. It loads from your site, not from Drop &amp; View.</p>
+
     <h2>Privacy</h2>
     <p>Your model stays in your browser; Drop & View does not upload it to its own server. The app loads rendering code online, and DEMO downloads a sample model. External converters have their own privacy terms.</p>
 

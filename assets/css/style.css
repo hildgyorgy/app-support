@@ -188,6 +188,18 @@ code {
   font-size: 0.9em;
 }
 
+pre {
+  overflow-x: auto;
+  padding: 16px;
+  border-radius: 5px;
+  background: rgba(127, 127, 127, 0.14);
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #111113;
