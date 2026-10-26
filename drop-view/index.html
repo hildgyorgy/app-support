@@ -17,11 +17,11 @@
     <header class="hero">
       <img class="app-icon" src="../assets/images/drop-view.png" alt="Drop &amp; View icon">
       <h1>Drop &amp; View</h1>
-      <p class="subtitle">Share Archicad models in the browser · Version 1.5</p>
+      <p class="subtitle">Share Archicad models in the browser · Version 2.0</p>
     </header>
 
     <h2>About</h2>
-    <p>Drop &amp; View is a lightweight way to share architectural 3D models without a dedicated viewer. Export a GLB, send the file and the viewer link, and open the model directly in a modern browser. No app, account or upload to Drop &amp; View is required. Version 1.5 is the current stabilised viewer release.</p>
+    <p>Drop &amp; View is a lightweight way to share architectural 3D models without a dedicated viewer. Export a GLB, send the file and the viewer link, and open the model directly in a modern browser. No app, account or upload to Drop &amp; View is required. Version 2.0 adds the optional Material Workbench to the standalone viewer.</p>
 
     <h2>Archicad workflow</h2>
     <p>Using Archicad 28, 29 or 30? The free <a href="https://github.com/hildgyorgy/archicad-glb-exporter/releases">Drop &amp; View GLB Exporter</a> creates GLB files directly from the active 3D window on supported Apple Silicon Macs and Windows 11 PCs.</p>
@@ -47,7 +47,7 @@
       <li>Get the <a href="https://github.com/hildgyorgy/archicad-glb-exporter/releases">Drop &amp; View GLB Exporter</a> and add it in Archicad's Add-On Manager.</li>
       <li>Set up the 3D window as you want it shared. Visible elements, materials, the view and sun position go into the GLB.</li>
       <li>Choose <strong>Drop &amp; View GLB Exporter &rarr; Export active 3D window to GLB&hellip;</strong></li>
-      <li>Choose how to group the model: by surface, layer or element type. Check the clear-glass selection and add design credits if you like.</li>
+      <li>Choose how to group the model: by surface, layer or element type. Check the clear-glass selection, choose whether to allow Material Workbench editing, and add design credits if you like.</li>
       <li>Save the GLB and drop it into Drop &amp; View.</li>
     </ol>
     <p>The exporter supports Archicad 28, 29 and 30 on supported Apple Silicon Macs and Windows 11 PCs. Check the release page for system details.</p>
@@ -74,6 +74,10 @@
       <li><strong>FLY:</strong> on a desktop, use WASD or arrow keys to move; E/Q change height. Click the model to pause or resume; press Escape to release the pointer.</li>
     </ul>
     <p>Click the red <strong>i</strong> beside OPEN for the app version, design credits and Support.</p>
+
+    <h2>Material Workbench</h2>
+    <p>In the standalone viewer, open the red <strong>i</strong> panel and choose <strong>MATERIAL WORKBENCH</strong>. Click a surface to preview solid colours, polished metal, lacquer, exporter-selected clear glass or JPEG/PNG material maps. APPLY changes only the browser preview; the original GLB is never overwritten.</p>
+    <p>The built-in demos can be edited for experimentation but cannot be saved. A GLB you open yourself can use <strong>SAVE NEW GLB</strong> after an edit unless its owner exported it as view-only. For a view-only model, Drop &amp; View asks for an editable GLB instead. Embedded viewers never show or load the Material Workbench.</p>
 
     <h2>If a file does not open</h2>
     <p>Check the format and try a self-contained GLB. If you see an error, choose another file or try DEMO. Large models may take longer, especially on phones.</p>
