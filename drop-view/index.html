@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Drop & View support, usage guide and privacy information.">
+  <meta name="description" content="Drop &amp; View support, usage guide and privacy information.">
   <link rel="icon" type="image/png" sizes="1024x1024" href="../assets/images/icon.png">
   <link rel="apple-touch-icon" sizes="1024x1024" href="../assets/images/icon.png">
   <link rel="manifest" href="../site.webmanifest">
-  <title>Drop & View Support</title>
+  <title>Drop &amp; View Support</title>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
   <main class="container">
-    <nav class="topbar" aria-label="Support navigation"><a class="site-name" href="../">App Support</a><span>Drop & View</span></nav>
+    <nav class="topbar" aria-label="Support navigation"><a class="site-name" href="../">App Support</a><span>Drop &amp; View</span></nav>
 
     <header class="hero">
-      <img class="app-icon" src="../assets/images/drop-view.png" alt="Drop & View icon">
-      <h1>Drop & View</h1>
-      <p class="subtitle">Share Archicad models in the browser</p>
+      <img class="app-icon" src="../assets/images/drop-view.png" alt="Drop &amp; View icon">
+      <h1>Drop &amp; View</h1>
+      <p class="subtitle">Share Archicad models in the browser · Version 1.5</p>
     </header>
 
     <h2>About</h2>
-    <p>Drop & View is a lightweight way to share architectural 3D models without a dedicated viewer. Export a GLB, send the file and the viewer link, and open the model directly in a modern browser. No app, account or upload to Drop & View is required.</p>
+    <p>Drop &amp; View is a lightweight way to share architectural 3D models without a dedicated viewer. Export a GLB, send the file and the viewer link, and open the model directly in a modern browser. No app, account or upload to Drop &amp; View is required. Version 1.5 is the current stabilised viewer release.</p>
 
     <h2>Archicad workflow</h2>
     <p>Using Archicad 28, 29 or 30? The free <a href="https://github.com/hildgyorgy/archicad-glb-exporter/releases">Drop &amp; View GLB Exporter</a> creates GLB files directly from the active 3D window on supported Apple Silicon Macs and Windows 11 PCs.</p>
@@ -35,7 +35,7 @@
 
     <h2>How to use</h2>
     <ol>
-      <li>Drop a <strong>GLB</strong> onto the page, or click <strong>OPEN</strong>. No model? Try <strong>DEMO</strong>.</li>
+      <li>Drop a <strong>GLB</strong> onto the page, or click <strong>OPEN</strong>. No model? Try <strong>DEMO 1</strong> or <strong>DEMO 2</strong>.</li>
       <li>Drag to orbit. Right-drag to pan. Scroll or pinch to zoom.</li>
       <li>Double-click a detail to centre it. Click <strong>ZOOM ALL</strong> to find the whole model again.</li>
       <li>Choose a display style at the top centre and a camera view at the top right.</li>
@@ -50,29 +50,30 @@
       <li>Choose how to group the model: by surface, layer or element type. Check the clear-glass selection and add design credits if you like.</li>
       <li>Save the GLB and drop it into Drop &amp; View.</li>
     </ol>
-    <p>The exporter supports Archicad 28 and 29 on supported Apple Silicon Macs and Windows 11 PCs. Check the release page for system details.</p>
+    <p>The exporter supports Archicad 28, 29 and 30 on supported Apple Silicon Macs and Windows 11 PCs. Check the release page for system details.</p>
+    <p>An exported initial view opens automatically with its projection and viewing direction, fitted to the whole model. Optional design credits appear under the red <strong>i</strong> button.</p>
 
     <h2>Why GLB?</h2>
-    <p>Drop & View intentionally uses <strong>GLB files only</strong>. A GLB keeps geometry, materials and textures together in one portable file, making the workflow more predictable and easier to share. Convert other model formats to GLB before opening them here.</p>
+    <p>Drop &amp; View intentionally uses <strong>GLB files only</strong>. A GLB keeps geometry, materials and textures together in one portable file, making the workflow more predictable and easier to share. Convert other model formats to GLB before opening them here.</p>
 
     <h2>Display styles</h2>
     <ul>
       <li><strong>ORIGINAL:</strong> the model's colours and textures.</li>
       <li><strong>WHITE / HIDDEN:</strong> a clean white model, with or without visible edges.</li>
       <li><strong>WIRE:</strong> just the wireframe.</li>
-      <li><strong>B&amp;W:</strong> a graphic light-and-shadow view.</li>
-      <li><strong>PATH TRACER:</strong> realistic HDRI lighting and glass under ORIGINAL. Let the image refine; more <strong>SAMPLES</strong> means a cleaner result. Exported Archicad sun settings align its lighting. It may be slow on less capable hardware.</li>
+      <li><strong>B&amp;W:</strong> a graphic light-and-shadow view, with an optional black background.</li>
+      <li><strong>PATH TRACER:</strong> progressive HDRI lighting and glass under ORIGINAL. Compose the view in ORIGINAL first, then start PATH TRACER. Camera controls remain locked while it refines; more <strong>SAMPLES</strong> means a cleaner result. Exported Archicad sun settings align its lighting. It may be slow on less capable hardware.</li>
     </ul>
 
     <h2>More ways to explore</h2>
     <ul>
-      <li><strong>PERSP / AXON / ORTHO:</strong> perspective, axonometric, top and elevation views.</li>
-      <li><strong>CONTROLS:</strong> adjust the sun, shadows, transparency, camera and FLY speed.</li>
+      <li><strong>PERSP / AXON / ORTHO:</strong> perspective, orbitable axonometric, top and elevation views. FRONT, LEFT, RIGHT and BACK elevations rotate horizontally while staying upright; TOP remains fixed.</li>
+      <li><strong>CONTROLS:</strong> adjust the sun, shadows, transparency, camera and FLY speed. Exported rectangular Archicad Window Lights can also be switched on and adjusted when the model contains them.</li>
       <li><strong>GROUPS:</strong> show or hide surfaces, layers or element types, depending on the export. Use <strong>ALL ON / ALL OFF</strong> for a quick reset.</li>
       <li><strong>SECTION:</strong> switch on the cut, choose X, Y or Z, then move the slider.</li>
       <li><strong>FLY:</strong> on a desktop, use WASD or arrow keys to move; E/Q change height. Click the model to pause or resume; press Escape to release the pointer.</li>
     </ul>
-    <p>Click the red <strong>i</strong> beside OPEN FILE for app details, design credits and Support.</p>
+    <p>Click the red <strong>i</strong> beside OPEN for the app version, design credits and Support.</p>
 
     <h2>If a file does not open</h2>
     <p>Check the format and try a self-contained GLB. If you see an error, choose another file or try DEMO. Large models may take longer, especially on phones.</p>
@@ -88,10 +89,10 @@
   data-title="Explore the 3D model"
   data-inline="true"
 &gt;&lt;/script&gt;</code></pre>
-    <p>Visitors can orbit and zoom on the page, then open the same view full screen for all controls. The GLB must be on the same website as this snippet. It loads from your site, not from Drop &amp; View.</p>
+    <p>Visitors can orbit and zoom on the page, then open the same view full screen for all controls. The GLB URL must end in <code>.glb</code> and be on the same website as this snippet. The host page passes the file to the origin-checked viewer; it loads from your site and is not uploaded to Drop &amp; View.</p>
 
     <h2>Privacy</h2>
-    <p>Your model stays in your browser; Drop & View does not upload it to its own server. The app loads rendering code online, and DEMO downloads a sample model. External converters have their own privacy terms.</p>
+    <p>Your model stays in your browser; Drop &amp; View does not upload it to its own server. The app loads rendering code online, and DEMO downloads a sample model. External converters have their own privacy terms.</p>
 
     <h2>Support</h2>
     <p>Questions, suggestions and feedback are always welcome.</p>
