@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MusiCards 2.1 help, support and privacy information.">
+  <meta name="description" content="MusiCards 2.2 help, support and privacy information.">
   <link rel="icon" type="image/png" sizes="1024x1024" href="../assets/images/icon.png">
   <link rel="apple-touch-icon" sizes="1024x1024" href="../assets/images/icon.png">
   <link rel="manifest" href="../site.webmanifest">
@@ -24,44 +24,44 @@
     <p>Explore MusicBrainz releases, tracks, credits and artists. Connect your own music library to play matching tracks; MusiCards also works as a viewer without one. Available music is marked with a blue play symbol.</p>
     <p>Available for iPhone, iPad and Apple silicon Mac with iOS, iPadOS or macOS 26 or later. <a href="https://apps.apple.com/hu/app/musicards-release-viewer/id6763909271">View on the App Store</a>.</p>
 
-    <h2>Version 2.1</h2>
-    <p>Search your own library on its own or alongside MusicBrainz. This update also improves loading, error handling and reliability.</p>
+    <h2>Version 2.2</h2>
+    <p>Play from Navidrome through a compatible UPnP/DLNA renderer, control its playback and volume, and pick up its current session from another device. Includes interface refinements and reliability improvements.</p>
 
     <h2 id="help">Help</h2>
     <h3>Find music</h3>
     <ul>
       <li>Enter an artist name, <strong>, release title</strong> to search releases, or <strong>artist, release</strong> for a combined search.</li>
       <li>Use the search switch to choose your library only or your library plus MusicBrainz.</li>
-      <li>Paste a MusicBrainz release ID to find a specific edition. On iPhone, you can also scan a CD barcode, identify music with Shazam, or open the album playing in Apple Music.</li>
+      <li>Paste a MusicBrainz release ID to find a specific edition, or open the album playing in Apple Music. On iPhone, you can also scan a CD barcode or identify music with Shazam.</li>
     </ul>
 
     <h3>Connect your library</h3>
-    <p>Choose one active source in Library Connection: a local folder or your own Navidrome server. MusicBrainz remains available for browsing with either source.</p>
+    <p>On the home screen, open SOURCE and choose This device or Navidrome. MusicBrainz browsing works without connecting a library.</p>
     <ul>
-      <li><strong>Local folder:</strong> Tag albums with <a href="https://picard.musicbrainz.org/">MusicBrainz Picard</a>. On Mac, use Library Connection to create or update <strong>library.json</strong> in the music folder. On iPhone, select a folder already containing that index. Only matching files actually present are playable.</li>
-      <li><strong>Navidrome:</strong> Enter a reachable <strong>https://</strong> server address, username and password. MusiCards reads its catalogue and streams matching tracks from your server. HTTP-only addresses are not accepted.</li>
+      <li><strong>Local folder:</strong> Tag albums with <a href="https://picard.musicbrainz.org/">MusicBrainz Picard</a>. On Mac, use Create / update library index on the home screen to prepare <strong>library.json</strong>. On iPhone or iPad, select the music folder containing that index. Only present files with matching MusicBrainz identifiers are playable.</li>
+      <li><strong>Navidrome:</strong> Enter your username, password and at least one server address: LOCAL for home-network access or REMOTE for <strong>https://</strong> access away from home. LOCAL also accepts HTTP on a private network. MusicBrainz tags are required; library.json is not.</li>
     </ul>
 
     <h3>Play</h3>
-    <p>Tap a blue play symbol beside a track, or on a release to queue its available tracks. The PLAYER card has queue and playback controls; system media controls also work during playback. MusiCards plays local FLAC, ALAC and AAC files, and supported audio from Navidrome. Playback and seeking depend on the file, device and connection.</p>
+    <p>Tap a blue play symbol beside a track, or on a release to queue its available tracks. In OUTPUT, choose System audio or UPnP Renderer. UPnP requires Navidrome, an active LOCAL connection and a compatible renderer that can reach that address. Select the renderer, then use PLAYER for playback, seeking and volume. Local FLAC, ALAC and AAC files play on this device; background playback and system media controls are available where supported.</p>
 
     <h3>Troubleshooting</h3>
     <ul>
       <li><strong>No play symbol?</strong> Check MusicBrainz tags and the active source. For a local folder, create the index again after changing files. For Navidrome, make sure its library scan has completed.</li>
-      <li><strong>Navidrome will not connect?</strong> Check the HTTPS address, credentials and network access from this device.</li>
+      <li><strong>Navidrome or renderer will not connect?</strong> Check the active server address and credentials. For UPnP, allow local-network access, connect both devices to the same network and check that the renderer can reach the LOCAL Navidrome address. Try deep search or a manual IP if discovery finds nothing.</li>
       <li><strong>Slow start or interrupted playback?</strong> A cloud file may need to download first, or the Navidrome connection may be unstable. Check the current audio output if there is no sound.</li>
       <li><strong>Shazam or barcode scanning unavailable?</strong> Check microphone or camera permission in iOS Settings.</li>
     </ul>
 
     <h2 id="support">Support</h2>
-    <p>Questions and bug reports are welcome. For playback problems, please include your device and OS version, music source, audio format and a short description of what happened.</p>
+    <p>Questions and bug reports are welcome. For playback problems, include your device and OS version, music source, output or renderer model, audio format and a short description. Do not send passwords or authenticated stream URLs.</p>
     <p class="support-link"><a href="mailto:hild.gyorgy@freemail.hu?subject=MusiCards%20Support">Email MusiCards support</a></p>
 
     <h2 id="privacy">Privacy Policy</h2>
     <p>MusiCards has no developer account, advertising, analytics or telemetry. The developer does not receive your music files, listening history or Navidrome credentials.</p>
     <p>App preferences, recent MusicBrainz content and the reference to your chosen local folder are stored on your device. A local index (<strong>library.json</strong>) stays in the selected music folder. Navidrome server details are saved locally; its password is stored in Apple Keychain. You can remove a Navidrome connection in the app, and delete a local index from its folder.</p>
-    <p>MusiCards contacts MusicBrainz, Cover Art Archive, Wikidata and Wikipedia for music information. On iPhone, Shazam recognition and Apple Music Now Playing use Apple services. If you connect Navidrome, the app communicates directly with your chosen server over HTTPS using OpenSubsonic authentication. Search terms, music identifiers and related requests may reach these independent services when their features are used. Your raw Navidrome password is not sent as an OpenSubsonic request parameter.</p>
-    <p>Microphone access is used for Shazam recognition and camera access for barcode scanning when you start those features. MusiCards does not store microphone audio or camera images for the developer. Your local audio is read for playback and is not uploaded to the developer.</p>
+    <p>MusiCards contacts MusicBrainz, Cover Art Archive, Wikidata and Wikipedia for music information. Shazam and Apple Music Now Playing use Apple services where supported. Navidrome requests go directly to your chosen server using OpenSubsonic authentication over HTTPS, or HTTP for a configured private-network address. Search terms, music identifiers and related requests may reach these services. Your raw Navidrome password is not sent as an OpenSubsonic request parameter.</p>
+    <p>Microphone and camera access are used only when you start Shazam recognition or barcode scanning. Your local audio is read for playback and is not uploaded to the developer. UPnP discovers and controls players on your local network. Your selected renderer receives track metadata and an authenticated Navidrome stream URL and fetches the music directly; HTTP streams and reusable authentication tokens travel unencrypted on that network.</p>
 
     <h2>Attribution</h2>
     <p>Music metadata comes from <a href="https://musicbrainz.org/">MusicBrainz</a>, whose core data is available under CC0. Artwork comes from the Cover Art Archive; individual images retain their respective rights. MusiCards includes libFLAC and libogg; their licence notices are in the app under <strong>About → Third-Party Licenses</strong>.</p>
