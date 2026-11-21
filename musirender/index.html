@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MusiRender support and privacy information.">
+  <link rel="icon" type="image/png" sizes="1024x1024" href="../assets/images/icon.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="../assets/images/icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <title>MusiRender Support</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <nav class="topbar" aria-label="Support navigation"><a class="site-name" href="../">App Support</a><span>MusiRender</span></nav>
+    <header class="hero">
+      <img class="app-icon" src="../assets/images/musirender.png" alt="MusiRender icon">
+      <h1>MusiRender</h1>
+      <p class="subtitle">Support and privacy information</p>
+    </header>
+
+    <h2 id="help">About</h2>
+    <p>MusiRender turns your Mac into a UPnP/DLNA audio renderer. Browse your library in a controller such as MusiCards or mconnect Player, select MusiRender as the playback device, and listen through the Mac’s current audio output. A UPnP/DLNA media server such as Gerbera can provide the music library.</p>
+    <p>Use the menu bar, the compact player window or macOS Now Playing to control playback. MusiRender can keep playing with its window closed.</p>
+
+    <h3>System requirements</h3>
+    <p>MusiRender requires an Apple silicon Mac running macOS 26 Tahoe or later. Connect the Mac, controller and media server to the same local IPv4 network.</p>
+
+    <h3>Download for macOS</h3>
+    <p class="support-link"><a href="https://github.com/hildgyorgy/musirender/releases">View MusiRender releases on GitHub</a></p>
+
+    <h3>First setup</h3>
+    <ol>
+      <li>Open the notarized DMG, drag MusiRender to Applications and open the app.</li>
+      <li>Allow local network access if macOS asks. Click the speaker icon in the Mac menu bar to check that MusiRender is <strong>Online</strong>.</li>
+      <li>In your controller, select your media server as the library and <strong>MusiRender</strong> as the playback device.</li>
+      <li>Start a track from the controller. To change where it plays, select the device in <strong>System Settings → Sound → Output</strong>.</li>
+    </ol>
+
+    <h3>Playback and audio information</h3>
+    <ul>
+      <li>The <strong>Source</strong> line shows the source server and the track’s format, sample rate, bit depth and estimated bitrate when available.</li>
+      <li>The <strong>Output</strong> line shows the current macOS audio device, such as the built-in speakers, Bluetooth headphones or a USB DAC.</li>
+      <li>Gapless playback depends on the controller queuing the next track in advance and on the stream format and buffering.</li>
+    </ul>
+
+    <h2 id="support">Support</h2>
+    <p>If MusiRender does not appear in your controller, check that it is <strong>Online</strong>, that local network access is enabled for both the Mac app and the controller, and that your network allows the devices to reach each other. Guest Wi-Fi may isolate devices.</p>
+    <p>Some controllers manage their own playback queue. Use the controller’s track buttons if the corresponding controls are unavailable in MusiRender. For playback issues, open <strong>Diagnostics</strong> in MusiRender and include the relevant entries, your macOS version, and the names of the controller and media server when contacting support.</p>
+    <p class="support-link"><a href="mailto:hild.gyorgy@freemail.hu?subject=MusiRender%20Support">Send a support message</a></p>
+
+    <h2 id="privacy">Privacy Policy</h2>
+    <p>MusiRender requires no app account and contains no advertising, analytics or developer-operated crash reporting.</p>
+    <ul>
+      <li>MusiRender uses the local network to announce itself and receive playback commands from UPnP/DLNA controllers.</li>
+      <li>The app fetches audio and available artwork from the URLs supplied by your controller. Those requests go directly to the hosts that serve the content.</li>
+      <li>App settings are stored on your Mac. Recent diagnostic entries are kept in memory, and credential-like URL query values are redacted in those entries.</li>
+      <li>Playback and diagnostic data are never sent to the developer automatically.</li>
+    </ul>
+
+    <div class="footer">György Hild · 2026</div>
+  </main>
+</body>
+</html>
