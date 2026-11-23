@@ -20,38 +20,35 @@
     </header>
 
     <h2>About</h2>
-    <p>MusicBrainz Explorer is a release and discography browser built around MusicBrainz metadata, detailed credits and clear navigation.</p>
-    <p>It can match and play MusicBrainz-tagged music from a local folder or Navidrome. Playback is optional; the Explorer remains fully usable without a library.</p>
+    <p>Browse MusicBrainz releases, editions, discographies and track credits. Connect a music library if you want to play matching releases.</p>
 
     <h3>System requirements</h3>
-    <p>MusicBrainz Explorer runs in a modern browser with JavaScript enabled. Local-folder playback requires supported tagged files; Navidrome playback requires an accessible OpenSubsonic server.</p>
+    <p>Use a modern browser with JavaScript enabled. For playback, use MusicBrainz-tagged audio files in a local folder or a reachable Navidrome server with OpenSubsonic support.</p>
 
     <h3>Web app</h3>
     <p class="support-link"><a href="https://hildgyorgy.github.io/mb-explorer/">Open MusicBrainz Explorer</a></p>
 
     <h2>Setup and playback</h2>
-    <p>Select the pulsing logo on the start page to open search help and playback setup.</p>
+    <p>Open Setup with the start-page logo or the gear in the header.</p>
     <ul>
-      <li><strong>Source:</strong> choose a local music folder or connect Navidrome.</li>
-      <li>For local playback, create or load <code>library.json</code>. Albums are identified from embedded MusicBrainz IDs, never folder names.</li>
-      <li><strong>MusicBrainz compatibility:</strong> review which albums are correctly identified and which need better tags.</li>
-      <li><strong>Output:</strong> system audio is supported; UPnP network-renderer output is under development and coming soon.</li>
-      <li>Play symbols mark matched releases and tracks; the floating player stays available while you browse.</li>
+      <li>Under <strong>Source</strong>, choose <strong>Local</strong> or <strong>Navidrome</strong>. Select the active option again to open its settings.</li>
+      <li>Use <strong>MusicBrainz compatibility</strong> to review tagging in the selected library. Play icons mark playable tracks and editions in <strong>Versions</strong>. In an artist’s discography, a play icon means at least one edition is playable.</li>
+      <li>Under <strong>Layout</strong>, choose the default single-column <strong>Focus</strong> view or the two-column <strong>Desktop</strong> view, with editions on the left and tracks on the right.</li>
     </ul>
+    <p>For a local library, run <strong>Create Library Index</strong> from the <strong>Local</strong> settings and choose your music folder. If the browser downloads the files, put <code>library.json</code> and <code>library-report.json</code> in that folder. To load an existing index or reconnect later, choose <strong>Connect Music Folder</strong> and select the same folder.</p>
 
     <h2>Navidrome</h2>
-    <p>Open <strong>Setup → Source → Navidrome → Connect or configure</strong>, then enter the server URL, username and password. Remote servers must use HTTPS.</p>
+    <p>In the Navidrome settings, fill in <strong>Navidrome URL</strong>, <strong>Username</strong> and <strong>Password</strong>, then choose <strong>Save &amp; Connect</strong>.</p>
     <ul>
-      <li>No <code>library.json</code> is needed: the Explorer reads the Navidrome catalogue through OpenSubsonic.</li>
-      <li>Albums need release MBIDs; tracks need recording MBIDs plus accurate disc and track numbers.</li>
-      <li>The compatibility report lists identified albums and albums that still need MusicBrainz tags.</li>
-      <li>Matching server releases appear in search and stream through the browser player using system audio.</li>
-      <li>The selected source and server connection are restored across sessions using a saved salted login token; the original password is not stored.</li>
+      <li><strong>Navidrome URL</strong> is the HTTPS address for catalogue access and browser playback in the hosted Explorer. A Tailscale Serve URL works here.</li>
+      <li><strong>Local URL for UPnP</strong> is optional. With it, the renderer streams directly from Navidrome. Leave it blank to let the Bridge relay the stream.</li>
+      <li>The status below the buttons shows the connection in use. Leave the password blank to reuse a saved login.</li>
     </ul>
+    <p>Explorer reads the Navidrome catalogue directly without a local index. Albums need MusicBrainz release IDs. Tracks also need recording IDs and accurate disc and track numbers. Open the <strong>MusicBrainz compatibility report</strong> below the connection status to see which albums still need tags.</p>
 
     <h2>Audio playback</h2>
-    <p>With system audio, local files use the browser's native audio pipeline; Navidrome playback requests the raw stream without a bitrate limit. The Explorer does not deliberately request transcoding.</p>
-    <p>Because the browser, operating-system mixer and chosen audio device remain part of the playback chain, bit-perfect output cannot be guaranteed.</p>
+    <p><strong>System audio</strong> plays through your device’s current sound output, including speakers, headphones or a USB DAC. Explorer requests the original Navidrome stream. The browser and system mixer can still affect the output.</p>
+    <p><strong>UPnP renderer</strong> works with Navidrome and the <a href="https://github.com/hildgyorgy/mb-explorer/releases/tag/bridge-v0.2.1">Explorer Bridge for Apple Silicon Macs</a>. On the same local network as your renderer, open Explorer from the Bridge menu. In <strong>Output → UPnP renderer</strong>, choose <strong>Discover UPnP renderers</strong> and select your device. The hosted Explorer requires an HTTPS Bridge URL.</p>
 
     <h2>Support</h2>
     <p>Questions, suggestions and feedback are always welcome.</p>
@@ -60,18 +57,16 @@
     <h2 id="privacy">Privacy Policy</h2>
     <ul>
       <li>MusicBrainz Explorer has no application backend or user accounts.</li>
-      <li>Your music files and <code>library.json</code> are not uploaded by the app.</li>
-      <li>Browser indexing and playback happen locally on your device.</li>
-      <li>Supported browsers remember the selected local-folder handle, but may ask you to approve access again.</li>
-      <li>Navidrome requests go directly from your browser to the server you configure.</li>
-      <li>The saved Navidrome connection contains a reusable salted login token, not the original password.</li>
+      <li>Local files and indexes stay on your device. Supported browsers can remember the selected folder and may ask for access again.</li>
+      <li>Explorer connects to the Navidrome server you configure. With UPnP, the renderer streams from Navidrome directly or through your Bridge.</li>
+      <li>The browser stores your Navidrome settings and a reusable salted login token. Your original password is not stored.</li>
       <li>Music metadata and cover art are requested from MusicBrainz and the Cover Art Archive.</li>
     </ul>
 
     <h2>Attribution</h2>
-    <p>Music metadata is provided by <a href="https://musicbrainz.org">MusicBrainz</a> under the CC0 license. Cover art is provided by the Cover Art Archive.</p>
+    <p>Music metadata comes from <a href="https://musicbrainz.org">MusicBrainz contributors</a>. Cover art comes from the Cover Art Archive.</p>
 
-    <div class="footer">MusicBrainz Explorer v1.5.0 · György Hild · 2026</div>
+    <div class="footer">MusicBrainz Explorer v1.5.2 · György Hild · 2026</div>
   </main>
 </body>
 </html>
