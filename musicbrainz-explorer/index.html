@@ -48,7 +48,15 @@
 
     <h2>Audio playback</h2>
     <p><strong>System audio</strong> plays through your device’s current sound output, including speakers, headphones or a USB DAC. Explorer requests the original Navidrome stream. The browser and system mixer can still affect the output.</p>
-    <p><strong>UPnP renderer</strong> works with Navidrome and the <a href="https://github.com/hildgyorgy/mb-explorer/releases/tag/bridge-v0.2.1">Explorer Bridge for Apple Silicon Macs</a>. On the same local network as your renderer, open Explorer from the Bridge menu. In <strong>Output → UPnP renderer</strong>, choose <strong>Discover UPnP renderers</strong> and select your device. The hosted Explorer requires an HTTPS Bridge URL.</p>
+
+    <h2 id="upnp-bridge">UPnP Bridge</h2>
+    <p>Use the Bridge on an Apple Silicon Mac to play Navidrome music through a UPnP renderer on the same local network.</p>
+    <ol>
+      <li><strong>Install.</strong> Open the <a href="https://github.com/hildgyorgy/mb-explorer/releases/latest">latest Bridge DMG</a>, drag the app to Applications, then launch it. Allow local network access if macOS asks.</li>
+      <li><strong>Set up.</strong> Open the bundled Explorer from the Bridge menu and use <code>http://127.0.0.1:9181</code> as the Bridge URL. For the hosted Explorer, use the Mac’s Tailscale Serve HTTPS address instead.</li>
+      <li><strong>Play.</strong> Connect Navidrome, select your device under <strong>Output → UPnP renderer</strong>, and start a playable track. Keep the Bridge running.</li>
+    </ol>
+    <p class="support-link"><a href="https://hildgyorgy.github.io/mb-explorer/support.html#upnp-bridge">Bridge setup guide, Tailscale command and troubleshooting</a></p>
 
     <h2>Support</h2>
     <p>Questions, suggestions and feedback are always welcome.</p>
